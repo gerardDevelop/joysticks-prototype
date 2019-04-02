@@ -7,8 +7,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div id="joystick-circle"></div>
-        <div id="aim-circle"></div>
+        <JoyWrapper></JoyWrapper>
+
       </div>
     );
   }
