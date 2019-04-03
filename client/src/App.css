@@ -9,20 +9,36 @@
 
 #joystick-circle {
   position: absolute;
-  background: #f00;
-  width: 75px;
-  height: 75px;
+  background: lightgray;
   border-radius: 50%;
-  bottom:20px;
-  left:20px;
 }
 
-#aim-circle {
+#joystick-stick {
   position: absolute;
-  background: #f00;
-  width: 75px;
-  height: 75px;
+  background: gray;
   border-radius: 50%;
-  bottom:20px;
-  right:20px;
+}
+
+#aim-area {
+  position: absolute;
+  background: lightgray;
+  border-radius: 50%;
+}
+
+#aim-dot {
+  position: absolute;
+  background: black;
+  border-radius: 50%;
+}
+
+#aim-projectile {
+  position: absolute;
+  background: red;
+  border-radius: 50%;
+}
+
+#center-dot {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
 }
