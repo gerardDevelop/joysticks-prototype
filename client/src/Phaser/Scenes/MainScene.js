@@ -64,8 +64,6 @@ class MainScene extends Phaser.Scene {
 
         this.player = this.add.sprite(window.innerWidth / 2, window.innerHeight / 2, 'player');
 
-
-
       /*
       const camera = this.cameras.main;
       

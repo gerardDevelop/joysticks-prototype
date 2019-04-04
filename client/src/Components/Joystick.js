@@ -18,39 +18,32 @@ export default class Joystick extends Component {
     };
 
     //this.setJoystickPos = this.setJoystickPos.bind(this);
-   // this.getAreaBoundsX = this.getAreaBoundsX.bind(this);
-   /// this.getAreaBoundsY = this.getAreaBoundsY.bind(this);
     //this.resetJoystickPos = this.resetJoystickPos.bind(this);
+
+    this.onTouchStart = this.onTouchStart.bind(this);
+    this.onTouchEnd = this.onTouchEnd.bind(this);
+    this.onTouchCancel = this.onTouchCancel.bind(this);
+    this.onTouchMove = this.onTouchMove.bind(this);
   } 
 
   componentDidMount() {
     window.joystick = this;
   }
 
-  getAreaBoundsX() {
-    return 50;
+  onTouchStart(e) {
+
   }
 
-  getAreaBoundsY() {
-    return 50;
+  onTouchEnd(e) {
+
   }
 
-  // called externally
-  setJoystickPos(x, y) {
-    // set the center of the joystick to the x, y coords
+  onTouchCancel(e) {
 
-    this.setState({
-      stickLeft: x - this.state.stickWidth / 2,
-      stickTop: y - this.state.stickHeight / 2
-    });
   }
 
-  // called externally
-  resetJoystickPos() {
-    this.setState({
-      stickLeft: 47.5,
-      stickTop: window.innerHeight - 77.5,
-    });
+  onTouchMove(e) {
+
   }
 
   render() {
@@ -70,18 +63,31 @@ export default class Joystick extends Component {
 */
     
     return (
-      
-      
-      <div id="joystick-circle" style={{ 
+      <>
+        <div id="joystick-toucharea" 
+          style={{
+            position: 'absolute',
+            left: 0,
+            top: 0,
+            width: window.innerWidth / 3,
+            height: window.innerHeight
+          }}
+          onTouchStart={this.onTouchStart}
+          onTouchEnd={this.onTouchEnd}
+          onTouchCancel={this.onTouchCancel}
+          onTouchMove={this.onTouchMove}
+          >
+        </div>
+        
+        <div id="joystick-circle" 
+          style={{ 
             left: this.state.joyAreaLeft, 
             top: this.state.joyAreaTop,
             width: this.state.joyAreaWidth,
             height: this.state.joyAreaHeight,
-        }}>
-      </div>
-
-      
-      
+          }}>
+        </div>
+      </>
     );
     
   }

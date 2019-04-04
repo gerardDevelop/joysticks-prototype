@@ -57,7 +57,6 @@ class App extends Component {
 
     return (
       <div className="App">
-        
       <Joystick></Joystick>
       <AimArea></AimArea>
       </div>

@@ -23,10 +23,18 @@ var config = {
   },
   scene: [
       MainScene
-  ]
+  ],
+  scale: {
+    parent: 'yourgamediv',
+    mode: Phaser.Scale.FIT,
+    width: window.innerWidth,
+    height:window.innerHeight
+}
 };
 
-const main = new Phaser.Game(config);
+var main = new Phaser.Game(config);
+
+//var scaleManager = new Phaser.ScaleManager(main);
 
 window.main = main;
 
@@ -53,7 +61,6 @@ var currentJoystickTouchID = 0;
 var joyStickIsBeingTouched = false;
 
 const onReceiveJoystickTouchCoords = (x, y) => {
-
 
     var deltaX = x - window.joystickManager.props.centerX;
     var deltaY = y - window.joystickManager.props.centerY;
@@ -166,6 +173,15 @@ window.addEventListener("load", function() {
   startup();
 
   console.log("x: " + window.innerWidth + "y: " + window.innerHeight);
+});
+
+document.addEventListener('contextmenu', event => event.preventDefault());
+
+window.addEventListener('resize', () => {
+    console.log("calling resize");
+    //window.main.resize(window.innerWidth, window.innerHeight);
+    window.mainScene.resize(window.innerWidth, window.innerHeight);
+    //main.scene.keys["MainScene"].resize(window.innerWidth, window.innerHeight);
 });
 
 
