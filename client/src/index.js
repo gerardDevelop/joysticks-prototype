@@ -57,13 +57,6 @@ serviceWorker.unregister();
 
 // One for detecting first touch, determining if the touch is within the bounds of the joystick circle area, and registering its ID as the currentJoystickTouchID
 
-var currentJoystickTouchID = 0;
-var joyStickIsBeingTouched = false;
-
-
-
-
-
 const onTouchStart = (e) => {
   e.preventDefault();
 };

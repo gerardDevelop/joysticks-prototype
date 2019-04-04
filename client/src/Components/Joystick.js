@@ -144,6 +144,15 @@ export default class Joystick extends Component {
     
     return (
       <>
+        <div id="joystick-circle" 
+          style={{ 
+            left: this.state.joyAreaLeft, 
+            top: this.state.joyAreaTop,
+            width: this.state.joyAreaWidth,
+            height: this.state.joyAreaHeight,
+          }}>
+        </div>
+
         <div id="joystick-toucharea" 
           style={{
             position: 'absolute',
@@ -157,15 +166,6 @@ export default class Joystick extends Component {
           onTouchCancel={this.onTouchCancel}
           onTouchMove={this.onTouchMove}
           >
-        </div>
-        
-        <div id="joystick-circle" 
-          style={{ 
-            left: this.state.joyAreaLeft, 
-            top: this.state.joyAreaTop,
-            width: this.state.joyAreaWidth,
-            height: this.state.joyAreaHeight,
-          }}>
         </div>
       </>
     );
